@@ -1,18 +1,26 @@
 import React, { useEffect, useRef } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../Firebase.init';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Loading from '../../Loading/Loading';
 
 const Signin = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     const [
         signInWithEmailAndPassword,
         user,
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, sending, passwordResetError] = useSendPasswordResetEmail(
+        auth
+    );
     const handleSubmit = (event) => {
         event.preventDefault();
         const email = emailRef.current.value;
@@ -23,9 +31,15 @@ const Signin = () => {
     }
     useEffect(() => {
         if (user) {
-            navigate('/');
+            navigate(from, { replace: true });
         }
     }, [user])
+    const handleResetPassword = () => {
+        const email = emailRef.current.value;
+        sendPasswordResetEmail(email);
+        toast("Send password reset Email !");
+
+    }
     return (
         <div className='container'>
             <form onSubmit={handleSubmit} className='w-50 mx-auto my-5'>
@@ -43,7 +57,14 @@ const Signin = () => {
                     <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                     <label className="form-check-label" >Check me out</label>
                 </div>
+                {
+                    loading || sending ? <Loading></Loading>
+                        :
+                        ""
+                }
                 <button type="submit" className="btn btn-primary">Submit</button>
+                <p>Forget Password? <Link onClick={handleResetPassword} to=''>Reset Password</Link></p>
+                <ToastContainer />
             </form>
         </div>
     );

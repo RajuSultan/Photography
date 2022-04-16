@@ -6,6 +6,8 @@ import Home from './Component/Home/Home'
 import { Route, Routes } from 'react-router-dom';
 import Signin from './Component/Login/Signin/Signin';
 import Resistation from './Component/Login/Signin/Resistation/Resistation';
+import RequireAuth from './Component/RequireAuth/RequireAuth';
+import Checkout from './Component/Home/Checkout/Checkout';
 
 function App() {
   return (
@@ -18,6 +20,11 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/signin' element={<Signin></Signin>}></Route>
         <Route path='/resistation' element={<Resistation></Resistation>}></Route>
+        <Route path='/checkout/:id' element={
+          <RequireAuth>
+            <Checkout></Checkout>
+          </RequireAuth>
+        }></Route>
       </Routes>
 
       <Footer></Footer>
