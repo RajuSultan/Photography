@@ -1,16 +1,33 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
+import auth from '../../../../Firebase.init';
 
 const Resistation = () => {
     const nameRef = useRef('');
     const emailRef = useRef('');
     const passwordRef = useRef('');
+    const navigate = useNavigate();
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
     const handleSubmit = (event) => {
         event.preventDefault();
         const name = nameRef.current.value;
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
+        createUserWithEmailAndPassword(email, password);
+
         console.log(name, email, password);
     }
+    useEffect(() => {
+        if (user) {
+            navigate('/');
+        }
+    }, [user])
 
     return (
         <div className='container'>
