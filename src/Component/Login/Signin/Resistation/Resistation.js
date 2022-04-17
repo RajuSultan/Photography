@@ -1,8 +1,11 @@
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import React, { useEffect, useRef } from 'react';
-import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGithub, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useAuthState, useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGithub, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../../../Firebase.init';
 import Loading from '../../../Loading/Loading';
+import github from '../../../images/github.png'
+import google from '../../../images/google.png'
 
 
 const Resistation = () => {
@@ -10,9 +13,9 @@ const Resistation = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const navigate = useNavigate();
+    const [user] = useAuthState(auth);
     const [
         createUserWithEmailAndPassword,
-        user,
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
@@ -32,12 +35,26 @@ const Resistation = () => {
 
         console.log(name, email, password);
     }
+
+    const provider = new GoogleAuthProvider();
+    const handleGoogle = () => {
+        signInWithPopup(auth, provider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => {
+                const errorMessage = error.message;
+                console.log(errorMessage);
+            })
+    }
     useEffect(() => {
         if (user) {
             navigate('/');
             console.log(user);
         }
-    }, [user])
+    }, [user]);
+
 
     return (
         <div className='container'>
@@ -73,7 +90,12 @@ const Resistation = () => {
                 <span className='d-block px-2 fs-3'>or</span>
                 <div style={{ height: "1px" }} className='bg-primary w-50'></div>
             </div>
-            <button className='btn shadow py-2 px-5 mb-5 bg-body rounded-pill text-primary'>Google SignIn</button>
+            <div className='d-flex justify-content-center container'>
+                <div>
+                    <button style={{ padding: "10px 100px" }} onClick={handleGoogle} className='btn shadow fs-3   mb-5 bg-body rounded-pill text-primary my-3'><img src={google} alt="" /> Google SignUp</button><br />
+                    <button style={{ padding: "10px 100px" }} onClick={() => signInWithGithub()} className='btn shadow  fs-3 mb-5 bg-body rounded-pill text-primary mb-5'> <img src={github} alt="" /> Github SignUp</button>
+                </div>
+            </div>
         </div>
     );
 };

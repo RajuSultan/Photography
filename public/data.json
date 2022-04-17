@@ -1,44 +1,44 @@
 [
     {
         "id": "6249e38417e4dcfd1d8e06de",
-        "price": "100",
+        "price": "$1,000",
         "picture": "https://images.unsplash.com/photo-1620833072816-e879094a1475?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
-        "name": "Conway Nicholson",
-        "comment": "“You cannot continue to victimize someone else just because you yourself were a victim once—there has to be a limit”"
+        "name": "Wedding photo session - Titanium package",
+        "comment": "“ Includes 12 hours of photography, a second photographer, complimentary engagement shoot, online gallery for sharing, and professional editing.”"
     },
     {
         "id": "6249e3847a3ac857c525c8a9",
-        "price": "100",
+        "price": "$700",
         "picture": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-        "name": "Cooper Fulton",
-        "comment": "“We can not fight for our rights and our history as well as future until we are armed with weapons of criticism and dedicated consciousness.” "
+        "name": "Wedding photo session - Platinum package",
+        "comment": "“Includes 10 hours of photography, complimentary engagement shoot, online gallery for sharing, and professional editing.” "
     },
     {
         "id": "6249e3845a55e6a86b18e6c9",
-        "price": "100",
+        "price": "$500",
         "picture": "https://images.unsplash.com/photo-1617137968427-85924c800a22?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bWVucyUyMGZhc2hpb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-        "name": "Clay Jimenez",
-        "comment": "“How much longer is the world willing to endure this spectacle of wanton cruelty?” "
+        "name": "Wedding photo session - Gold package",
+        "comment": " Includes 8 hours of photography, complimentary engagement shoot, online gallery for sharing, and professional editing. ” "
     },
     {
         "id": "6249e3849d3516a6764b0cda",
-        "price": "100",
+        "price": "$1000",
         "picture": "https://images.unsplash.com/photo-1599725728598-dc7ed109ff89?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-        "name": "Hodges Beck",
-        "comment": "“For if life had taught her anything, it was that healing and peace can begin only with acknowledgment of wrongs committed.”"
+        "name": "Personal photo session - Titanium package",
+        "comment": "“Includes 12 hours of photography, a second photographer, complimentary engagement shoot, online gallery for sharing, and professional editing.”"
     },
     {
         "id": "6249e38417514c194a2375ab",
-        "price": "100",
+        "price": "$700",
         "picture": "https://images.unsplash.com/photo-1520975916090-3105956dac38?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-        "name": "Fisher Barber",
-        "comment": "“Sometimes a homeland becomes a tale. We love the story because it is about our homeland and we love our homeland even more because of the story.”"
+        "name": "Personal photo session - Platinum package",
+        "comment": "“Includes 10 hours of photography, complimentary engagement shoot, online gallery for sharing, and professional editing.”"
     },
     {
         "id": "6249e38417514c194a2375fdgab",
-        "price": "100",
+        "price": "$500",
         "picture": "https://images.unsplash.com/photo-1531891570158-e71b35a485bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
-        "name": "Terra Santos",
-        "comment": "“The west need someone to tell the man who walks around with the biggest stick in the world, that that stick can`t bring down God`s house.”"
+        "name": "Personal photo session - Gold package",
+        "comment": "“ Includes 8 hours of photography, complimentary engagement shoot, online gallery for sharing, and professional editing. ”"
     }
 ]
