@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const Service = ({ service }) => {
     const { id, name, comment, price, picture } = service;
     return (
-        <div style={{ padding: "" }} className='col-lg-4 col-md-6 col-sm-12  '>
-            <div className='shadow rounded'>
+        <div className='col-lg-4 col-md-6 col-sm-12  '>
+            <div className='shadow bg-white rounded'>
                 <div className=''>
                     <img style={{ height: "300px" }} className='w-100 rounded' src={picture} alt="" />
                 </div>
