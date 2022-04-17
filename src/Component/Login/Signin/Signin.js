@@ -18,6 +18,7 @@ const Signin = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    console.log(error);
     const [sendPasswordResetEmail, sending, passwordResetError] = useSendPasswordResetEmail(
         auth
     );
@@ -46,12 +47,12 @@ const Signin = () => {
                 <h1 className='text-center text-primary'>Please SignIn</h1>
                 <div className="mb-3">
                     <label className="form-label">Email address</label>
-                    <input ref={emailRef} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Your email' />
+                    <input ref={emailRef} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Your email' required />
                     <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Password</label>
-                    <input ref={passwordRef} type="password" className="form-control" id="exampleInputPassword1" placeholder='Password' />
+                    <input ref={passwordRef} type="password" className="form-control" id="exampleInputPassword1" placeholder='Password' required />
                 </div>
                 <div className="mb-3 form-check">
                     <input type="checkbox" className="form-check-input" id="exampleCheck1" />
@@ -61,6 +62,9 @@ const Signin = () => {
                     loading || sending ? <Loading></Loading>
                         :
                         ""
+                }
+                {
+                    error ? <p>Your password or email is wrong</p> : ''
                 }
                 <button type="submit" className="btn btn-primary">Submit</button>
                 <p>Forget Password? <Link onClick={handleResetPassword} to=''>Reset Password</Link></p>

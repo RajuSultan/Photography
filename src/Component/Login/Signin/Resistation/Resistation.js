@@ -21,8 +21,8 @@ const Resistation = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
     const [sendEmailVerification, sending, verificationError] = useSendEmailVerification(auth);
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
-    const [signInWithGithub, githubUser, githubLoading, githubError] = useSignInWithGithub(auth);
+    const [signInWithGoogle] = useSignInWithGoogle(auth);
+    const [signInWithGithub] = useSignInWithGithub(auth);
     const handleSubmit = async (event) => {
         event.preventDefault();
         const name = nameRef.current.value;
@@ -36,18 +36,18 @@ const Resistation = () => {
         console.log(name, email, password);
     }
 
-    const provider = new GoogleAuthProvider();
-    const handleGoogle = () => {
-        signInWithPopup(auth, provider)
-            .then(result => {
-                const user = result.user;
-                console.log(user);
-            })
-            .catch(error => {
-                const errorMessage = error.message;
-                console.log(errorMessage);
-            })
-    }
+    // const provider = new GoogleAuthProvider();
+    // const handleGoogle = () => {
+    //     signInWithPopup(auth, provider)
+    //         .then(result => {
+    //             const user = result.user;
+    //             console.log(user);
+    //         })
+    //         .catch(error => {
+    //             const errorMessage = error.message;
+    //             console.log(errorMessage);
+    //         })
+    // }
     useEffect(() => {
         if (user) {
             navigate('/');
@@ -83,6 +83,9 @@ const Resistation = () => {
                         :
                         ""
                 }
+                {
+                    error || verificationError || updateError ? <p>There is something wrong. Try Again</p> : ""
+                }
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
             <div className='d-flex container align-items-center'>
@@ -92,7 +95,7 @@ const Resistation = () => {
             </div>
             <div className='d-flex justify-content-center container'>
                 <div>
-                    <button style={{ padding: "10px 100px" }} onClick={handleGoogle} className='btn shadow fs-3   mb-5 bg-body rounded-pill text-primary my-3'><img src={google} alt="" /> Google SignUp</button><br />
+                    <button style={{ padding: "10px 100px" }} onClick={() => signInWithGoogle()} className='btn shadow fs-3   mb-5 bg-body rounded-pill text-primary my-3'><img src={google} alt="" /> Google SignUp</button><br />
                     <button style={{ padding: "10px 100px" }} onClick={() => signInWithGithub()} className='btn shadow  fs-3 mb-5 bg-body rounded-pill text-primary mb-5'> <img src={github} alt="" /> Github SignUp</button>
                 </div>
             </div>
