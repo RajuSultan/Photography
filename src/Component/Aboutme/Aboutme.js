@@ -4,7 +4,7 @@ const Aboutme = () => {
     return (
         <div>
             <div className='w-75 my-5  mx-auto row g-4'>
-                <div className='col d-flex align-items-center'>
+                <div className='col-lg-6 col-sm-12 d-flex align-items-center'>
                     <div>
                         <h1> I AM DENIAL BROCK
                         </h1>
@@ -13,16 +13,16 @@ const Aboutme = () => {
                         <button type="button" class="btn btn-primary px-5 py-2 shadow">Hire Me</button>
                     </div>
                 </div>
-                <div className='col'>
+                <div className=' col-lg-6 col-sm-12'>
                     <img className='w-100' style={{ height: "500px" }} src="https://images.unsplash.com/photo-1618886614638-80e3c103d31a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fG1hbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="" />
                 </div>
 
             </div>
             <div className='w-75 my-5  mx-auto row g-4'>
-                <div className='col'>
+                <div className='col-lg-6 col-sm-12'>
                     <img className='w-100' style={{ height: "500px" }} src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzV8fG1hbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="" />
                 </div>
-                <div className='col d-flex align-items-center'>
+                <div className='col-lg-6 col-sm-12 d-flex align-items-center'>
                     <div>
                         <h1> My Story
                         </h1>
