@@ -1,4 +1,3 @@
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import React, { useEffect, useRef } from 'react';
 import { useAuthState, useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGithub, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
@@ -23,6 +22,8 @@ const Resistation = () => {
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const [signInWithGoogle] = useSignInWithGoogle(auth);
     const [signInWithGithub] = useSignInWithGithub(auth);
+
+    // handle resister form
     const handleSubmit = async (event) => {
         event.preventDefault();
         const name = nameRef.current.value;
@@ -33,25 +34,14 @@ const Resistation = () => {
         alert('Sent email for verification');
         await updateProfile({ displayName: name });
 
-        console.log(name, email, password);
+        // console.log(name, email, password);
     }
 
-    // const provider = new GoogleAuthProvider();
-    // const handleGoogle = () => {
-    //     signInWithPopup(auth, provider)
-    //         .then(result => {
-    //             const user = result.user;
-    //             console.log(user);
-    //         })
-    //         .catch(error => {
-    //             const errorMessage = error.message;
-    //             console.log(errorMessage);
-    //         })
-    // }
+    //Rote set after resister
     useEffect(() => {
         if (user) {
             navigate('/');
-            console.log(user);
+            // console.log(user);
         }
     }, [user]);
 

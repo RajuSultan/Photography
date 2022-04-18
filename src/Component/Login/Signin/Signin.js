@@ -18,10 +18,11 @@ const Signin = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
-    console.log(error);
-    const [sendPasswordResetEmail, sending, passwordResetError] = useSendPasswordResetEmail(
+    // console.log(error);
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
         auth
     );
+    // handle signin
     const handleSubmit = (event) => {
         event.preventDefault();
         const email = emailRef.current.value;
@@ -35,6 +36,8 @@ const Signin = () => {
             navigate(from, { replace: true });
         }
     }, [user])
+
+    // send reset password
     const handleResetPassword = () => {
         const email = emailRef.current.value;
         sendPasswordResetEmail(email);
