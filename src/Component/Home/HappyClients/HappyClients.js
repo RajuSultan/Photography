@@ -18,7 +18,7 @@ const HappyClients = () => {
                             </div>
                             <div className='text-center pb-2'>
                                 <h3>Dorado Khabn</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita accusantium doloremque ullam consectetur labore voluptatum fuga, quasi earum esse laudantium unde debitis suscipit facere excepturi ratione aliquam ex,</p>
+                                <p>Your picture is better than better because the beauty in this picture knows no boundaries.My words are inappropriate to describe Your picture.A thousand words cannot express how beautiful Your picture is.</p>
                                 <p><small>Rattings: 4/5</small></p>
                             </div>
                         </div>
@@ -31,7 +31,7 @@ const HappyClients = () => {
                             </div>
                             <div className='text-center pb-2'>
                                 <h3>Rido Keite</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita accusantium doloremque ullam consectetur labore voluptatum fuga, quasi earum esse laudantium unde debitis suscipit facere excepturi ratione aliquam ex,</p>
+                                <p>What a beautiful view!!! beauty at its finest… excellent colour drama!!!Oh! I’m in love with this natural image, light creates colour. light is created by colour in the picture.Thank you so mush for doing such a wonderfull Photography</p>
                                 <p><small>Rattings: 3/5</small></p>
                             </div>
                         </div>
@@ -44,7 +44,7 @@ const HappyClients = () => {
                             </div>
                             <div className='text-center pb-2'>
                                 <h3>Kebin shield</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita accusantium doloremque ullam consectetur labore voluptatum fuga, quasi earum esse laudantium unde debitis suscipit facere excepturi ratione aliquam ex,</p>
+                                <p>The picture is very elegant.My words are inappropriate to describe Your picture.A thousand words cannot express how beautiful Your picture is.</p>
                                 <p><small>Rattings: 5/5</small></p>
                             </div>
                         </div>
